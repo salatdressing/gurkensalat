@@ -3,16 +3,17 @@
 {% block title %}Articles index{% endblock %}
 
 {% block body %}
-    <h1>Articles index</h1>
+    <h1>Verwaltung</h1>
 
+    <a class="uk-button uk-button-text" href="{{ path('articles_new') }}">Neuen Artikel erstellen</a>
     <table class="table">
         <thead>
             <tr>
-                <th>Id</th>
-                <th>ArticleTitle</th>
-                <th>ArticleContent</th>
-                <th>IsFrom</th>
-                <th>actions</th>
+                <th>ID</th>
+                <th>Titel</th>
+                <th>Text</th>
+                <th>Autor</th>
+                <th>Aktionen</th>
             </tr>
         </thead>
         <tbody>
@@ -23,17 +24,16 @@
                 <td>{{ article.articleContent }}</td>
                 <td>{{ article.isFrom }}</td>
                 <td>
-                    <a href="{{ path('articles_show', {'id': article.id}) }}">show</a>
-                    <a href="{{ path('articles_edit', {'id': article.id}) }}">edit</a>
+                    <a class="uk-button uk-button-small uk-button-default" href="{{ path('articles_show', {'id': article.id}) }}">Anzeigen</a>
+                    <a class="uk-button uk-button-small uk-button-default" href="{{ path('articles_edit', {'id': article.id}) }}">Bearbeiten</a>
                 </td>
             </tr>
         {% else %}
             <tr>
-                <td colspan="5">no records found</td>
+                <td colspan="5">Keine Artikel vorhanden</td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
 
-    <a href="{{ path('articles_new') }}">Create new</a>
 {% endblock %}
