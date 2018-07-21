@@ -10,6 +10,20 @@
         {% endblock %}
     </head>
     <body>
+      <ul class="mx-5 uk-navbar-nav">
+          <li><a href="/">Home</a></li>
+          <li>
+              <a href="/articles">Verwaltung</a>
+              <div class="uk-navbar-dropdown">
+                  <ul class="uk-nav uk-navbar-dropdown-nav">
+                      <li><a href="#">Active</a></li>
+                      <li><a href="#">Item</a></li>
+                      <li><a href="#">Item</a></li>
+                  </ul>
+              </div>
+          </li>
+          <li><a href="/snake">Snake</a></li>
+      </ul>
         {% block body %}{% endblock %}
         {% block javascripts %}
         <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
