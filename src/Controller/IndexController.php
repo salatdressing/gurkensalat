@@ -28,4 +28,26 @@ class IndexController extends Controller
          'article' => $article
        ]);
      }
+
+     /**
+      * @Route("/article/{id}", name="showarticle")
+      */
+
+     public function show($id)
+    {
+        $article = $this->getDoctrine()
+        ->getRepository(Articles::class)
+        ->find($id);
+
+        if (!$article) {
+            throw $this->createNotFoundException(
+          'Kein Artikel vorhanden mit der ID ' . $id
+        );
+        }
+
+        return $this->render('index/article.html.twig', [
+        'blog_title' => 'Mein Blog',
+        'article' => $article
+      ]);
+    }
 }

@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>{{ article.articleTitle }}</h1>
+    <h5 class="text-muted">von
+      {{ article.isFrom }}</h5>
+    <p>
+      {{ article.articleContent }}
+    </p>
+    <a class="uk-button uk-button-text" href="/">Zurück zur Startseite</a>
+{% endblock %}
