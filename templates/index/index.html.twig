@@ -1,1 +1,24 @@
 {% extends 'base.html.twig' %}
+{% block body %}
+    <h1 class="d-none">{{ blog_title }}</h1>
+    {% for label, messages in app.flashes %}
+      {% for message in messages %}
+        <div uk-alert class="uk-alert-{{ label }}">
+          <a class="uk-alert-close" uk-close></a>
+          {{ message }}
+        </div>
+      {% endfor %}
+    {% endfor %}
+    {% for i in article %}
+      <article class="uk-article">
+        <h1 class="uk-article-title"><a class="uk-link-reset" href="">{{ i.articleTitle }}</a></h1>
+        <p class="uk-article-meta">von {{ i.isFrom }}</p>
+        <p>{{ i.articleContent }}</p>
+        <div class="uk-grid-small uk-child-width-auto" uk-grid>
+            <div>
+                <a class="uk-button uk-button-text" href="/article/{{ i.id }}">Artikel anzeigen</a>
+            </div>
+        </div>
+      </article>
+    {% endfor %}
+{% endblock %}

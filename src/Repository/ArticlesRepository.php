@@ -19,6 +19,19 @@ class ArticlesRepository extends ServiceEntityRepository
         parent::__construct($registry, Articles::class);
     }
 
+    public function getAllOrderDesc($id): array
+    {
+        $limit = "10";
+        $qb = $this->createQueryBuilder('p')
+           ->andWhere('p.id > :id')
+           ->setParameter('id', $id)
+           ->orderBy('p.id', 'DESC')
+           ->setMaxResults($limit)
+           ->getQuery();
+
+        return $qb->execute();
+    }
+
 //    /**
 //     * @return Articles[] Returns an array of Articles objects
 //     */
