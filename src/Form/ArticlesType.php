@@ -9,14 +9,19 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 
 class ArticlesType extends AbstractType
 {
-    public function buildForm(FormBuilderInterface $builder, array $options)
-    {
-        $builder
-            ->add('articleTitle')
-            ->add('articleContent')
-            ->add('isFrom')
-        ;
-    }
+  public function buildForm(FormBuilderInterface $builder, array $options)
+  {
+      $builder
+          ->add('articleTitle', TextType::class, array(
+            'label' => false
+          ))
+          ->add('isFrom', TextType::class, array(
+            'label' => false
+          ))
+          ->add('articleContent', TextareaType::class, array(
+            'label' => false
+          ));
+  }
 
     public function configureOptions(OptionsResolver $resolver)
     {
