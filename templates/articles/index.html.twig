@@ -24,7 +24,7 @@
                 <td>{{ article.articleContent }}</td>
                 <td>{{ article.isFrom }}</td>
                 <td>
-                    <a class="uk-button uk-button-small uk-button-default" href="{{ path('articles_show', {'id': article.id}) }}">Anzeigen</a>
+                    <a class="uk-button uk-button-small uk-button-default my-1" href="{{ path('articles_show', {'id': article.id}) }}">Anzeigen</a>
                     <a class="uk-button uk-button-small uk-button-default" href="{{ path('articles_edit', {'id': article.id}) }}">Bearbeiten</a>
                 </td>
             </tr>
