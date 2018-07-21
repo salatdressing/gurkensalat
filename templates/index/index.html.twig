@@ -11,9 +11,9 @@
     {% endfor %}
     {% for i in article %}
       <article class="uk-article">
-        <h1 uk-parallax="opacity: 0,1,1; y: -100,0,0; x: 100,100,0; scale: 2,1,1; viewport: 0.5;" class="uk-article-title"><a class="uk-link-reset" href="">{{ i.articleTitle }}</a></h1>
+        <h1 uk-parallax="opacity: 0,1,1; y: -100,0,0; x: 100,100,0; scale: 2,1,1; viewport: 1;" class="uk-article-title"><a class="uk-link-reset" href="">{{ i.articleTitle }}</a></h1>
         <p class="uk-article-meta">von {{ i.isFrom }}</p>
-        <p uk-parallax="opacity: 0,1,1; y: 100,0,0; x: -100,-100,0; scale: 0.5,1,1; viewport: 0.5;">{{ i.articleContent }}</p>
+        <p uk-parallax="opacity: 0,1,1; y: 100,0,0; x: -100,-100,0; scale: 0.5,1,1; viewport: 1;">{{ i.articleContent }}</p>
         <div class="uk-grid-small uk-child-width-auto" uk-grid>
             <div>
                 <a class="uk-button uk-button-text" href="/article/{{ i.id }}">Artikel anzeigen</a>
