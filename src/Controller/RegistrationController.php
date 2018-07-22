@@ -8,6 +8,11 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Symfony\Component\Form\Extension\Core\Type\TextareaType;
+use Symfony\Component\Form\Extension\Core\Type\SubmitType;
+use Symfony\Component\Form\Extension\Core\Type\RepeatedType;
+
 
 class RegistrationController extends Controller
 {
@@ -41,7 +46,7 @@ class RegistrationController extends Controller
         }
 
         return $this->render(
-            'registration/register.html.twig',
+            'registration/index.html.twig',
             array('form' => $form->createView())
         );
     }
