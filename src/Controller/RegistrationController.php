@@ -11,16 +11,17 @@ use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 
 class RegistrationController extends Controller
 {
-    /**
-     * @Route("/reg", name="user_registration")
-     */
+
+     /**
+      * @Route("/reg", name="user_registration", methods="GET|POST")
+      */
     public function register(Request $request, UserPasswordEncoderInterface $passwordEncoder)
     {
-        // 1) build the form
+
         $user = new User();
         $form = $this->createForm(UserType::class, $user);
 
-        // 2) handle the submit (will only happen on POST)
+
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
 
