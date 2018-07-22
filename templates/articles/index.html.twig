@@ -4,6 +4,13 @@
 
 {% block body %}
     <h1>Verwaltung</h1>
+    {% for label, messages in app.flashes %}
+      {% for message in messages %}
+        <div uk-alert class="uk-alert-{{ label }}">
+          <a class="uk-alert-close" uk-close></a>
+          {{ message }}
+        </div>
+      {% endfor %}
 
     <a class="my-2 uk-button uk-button-text" href="{{ path('articles_new') }}">Neuen Artikel erstellen</a><br />
     <table class="table my-3">

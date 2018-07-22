@@ -4,6 +4,13 @@
 
 {% block body %}
     <h1>Neuen Artikel erstellen</h1>
+    {% for label, messages in app.flashes %}
+      {% for message in messages %}
+        <div uk-alert class="uk-alert-{{ label }}">
+          <a class="uk-alert-close" uk-close></a>
+          {{ message }}
+        </div>
+      {% endfor %}
 
     {{ include('articles/_form.html.twig') }}
     <br />

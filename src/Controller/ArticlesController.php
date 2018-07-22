@@ -37,6 +37,11 @@ class ArticlesController extends Controller
             $em->persist($article);
             $em->flush();
 
+            $this->addFlash(
+                'success',
+                'Artikel erfolgreich veröffentlicht!'
+            );
+
             return $this->redirectToRoute('articles_index');
         }
 
@@ -65,6 +70,11 @@ class ArticlesController extends Controller
         if ($form->isSubmitted() && $form->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
+            $this->addFlash(
+                'success',
+                'Artikel erfolgreich bearbeitet!'
+            );
+
             return $this->redirectToRoute('articles_edit', ['id' => $article->getId()]);
         }
 
@@ -84,6 +94,11 @@ class ArticlesController extends Controller
             $em->remove($article);
             $em->flush();
         }
+
+        $this->addFlash(
+                'danger',
+                'Artikel erfolgreich gelöscht!'
+            );
 
         return $this->redirectToRoute('articles_index');
     }
