@@ -51,6 +51,12 @@ class User implements UserInterface
     /**
      * @ORM\Column(type="array")
      */
+
+     /**
+      * @ORM\Column(name="is_active", type="boolean")
+      */
+    private $isActive;
+    
     private $roles;
 
     public function __construct()
