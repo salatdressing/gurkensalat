@@ -19,7 +19,7 @@ security:
             security: false
         main:
             pattern:    ^/
-            anonymous: ~
+            anonymous: false
             form_login:
                 login_path: login
                 check_path: login
