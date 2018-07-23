@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Reg!{% endblock %}
+{% block title %}Registriere dich!{% endblock %}
 
 {% block body %}
 <h1>Registriere dich!</h1>
@@ -10,6 +10,6 @@
     {{ form_row(form.plainPassword.first) }}
     {{ form_row(form.plainPassword.second) }}
 
-    <button type="submit">Registrieren</button>
+    <button class="uk-button uk-button-default" type="submit">Registrieren</button>
 {{ form_end(form) }}
 {% endblock %}
