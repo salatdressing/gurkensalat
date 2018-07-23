@@ -43,7 +43,7 @@ class RegistrationController extends Controller
             // maybe set a "flash" success message for the user
             $this->addFlash(
                 'success',
-                'Reg klappt!'
+                'Registrierung war erfolgreich!'
             );
 
             return $this->redirectToRoute('index');
