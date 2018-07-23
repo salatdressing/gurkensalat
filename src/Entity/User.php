@@ -115,7 +115,7 @@ class User implements UserInterface
 
     public function getRoles()
     {
-        return $this->roles->toArray();
+        return $this->roles;
     }
 
     public function eraseCredentials()
