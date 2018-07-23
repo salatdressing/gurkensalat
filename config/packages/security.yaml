@@ -21,3 +21,7 @@ security:
             pattern:    ^/
             http_basic: ~
             provider: our_db_provider
+
+    role_hierarchy:
+            ROLE_ADMIN:       ROLE_USER
+            ROLE_SUPER_ADMIN: [ROLE_ADMIN, ROLE_ALLOWED_TO_SWITCH]
