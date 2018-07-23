@@ -12,7 +12,7 @@ use Symfony\Component\Security\Core\User\UserInterface;
  * @UniqueEntity(fields="email", message="Email already taken")
  * @UniqueEntity(fields="username", message="Username already taken")
  */
-class User implements UserInterface
+class User implements UserInterface, \Serializable
 {
     /**
      * @ORM\Id
@@ -115,7 +115,8 @@ class User implements UserInterface
 
     public function getRoles()
     {
-        return array('ROLE_ADMIN');
+        $this->roles = $aRole;
+        return array($aRole);
     }
 
 
