@@ -57,7 +57,12 @@ class User implements UserInterface
       */
     private $isActive;
 
-    private $roles;
+    /**
+     * @var array
+     *
+     * @ORM\Column(type="json")
+     */
+    private $roles = [];
 
     public function __construct()
     {
@@ -113,10 +118,16 @@ class User implements UserInterface
         return null;
     }
 
-    public function getRoles()
+    public function getRoles(): array
     {
-        $aRole = $this->roles;
-        return array('ROLE_USER');
+        $roles = $this->roles;
+
+        // guarantees that a user always has at least one role for security
+        if (empty($roles)) {
+            $roles[] = 'ROLE_USER';
+        }
+
+        return array_unique($roles);
     }
 
 
