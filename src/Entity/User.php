@@ -56,7 +56,7 @@ class User implements UserInterface
       * @ORM\Column(name="is_active", type="boolean")
       */
     private $isActive;
-    
+
     private $roles;
 
     public function __construct()
@@ -115,7 +115,7 @@ class User implements UserInterface
 
     public function getRoles()
     {
-        return $this->roles;
+        return $this->roles = array();
     }
 
     public function eraseCredentials()
