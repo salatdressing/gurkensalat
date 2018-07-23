@@ -115,8 +115,7 @@ class User implements UserInterface
 
     public function getRoles()
     {
-        $role = $this->roles;
-        return array($role);
+        return array('ROLE_ADMIN');
     }
 
 
