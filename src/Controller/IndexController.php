@@ -54,9 +54,9 @@ class IndexController extends Controller
     }
 
     /**
-     * @Route("/article/{id}", name="showarticle")
+     * @Route("/newmsg", name="newmsg")
      */
-     
+
   public function newMsg(MessageGenerator $messageGenerator)
 {
     // thanks to the type-hint, the container will instantiate a
