@@ -5,6 +5,8 @@ namespace App\Controller;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use App\Entity\Articles;
+use App\Service\MessageGenerator;
+
 
 class IndexController extends Controller
 {
@@ -50,4 +52,19 @@ class IndexController extends Controller
         'article' => $article
       ]);
     }
+
+    /**
+     * @Route("/article/{id}", name="showarticle")
+     */
+     
+  public function newMsg(MessageGenerator $messageGenerator)
+{
+    // thanks to the type-hint, the container will instantiate a
+    // new MessageGenerator and pass it to you!
+    // ...
+
+    $message = $messageGenerator->getHappyMessage();
+    $this->addFlash('success', $message);
+    // ...
+}
 }
