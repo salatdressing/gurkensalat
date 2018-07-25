@@ -9,8 +9,8 @@ use Symfony\Component\Security\Core\User\UserInterface;
 
 /**
  * @ORM\Entity
- * @UniqueEntity(fields="email", message="Email already taken")
- * @UniqueEntity(fields="username", message="Username already taken")
+ * @UniqueEntity(fields="email", message="Diese E-Mail-Adresse wird bereits verwendet!")
+ * @UniqueEntity(fields="username", message="Der gewählte Username wird bereits verwendet! Bitte wähle dir einen anderen aus!")
  */
 class User implements UserInterface
 {
