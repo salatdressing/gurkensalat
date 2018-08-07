@@ -10,89 +10,38 @@
         {% endblock %}
     </head>
     <body>
-      <nav class="uk-navbar-container" uk-navbar>
-        <div class="uk-navbar-left">
-            <ul class="mx-5 uk-navbar-nav">
-                <li><a href="/">Home</a></li>
-                <li><a href="/articles">Verwaltung</a></li>
-                <li>
-                    <a href="#">Entdecke mehr</a>
-                    <div class="uk-navbar-dropdown">
-                        <ul class="uk-nav uk-navbar-dropdown-nav">
-                            <li><a href="#">Link 1</a></li>
-                            <li><a href="#">Link 2</a></li>
-                        </ul>
-                    </div>
-                </li>
-                <li><a href="/reg">Registrierung</a></li>
-            </ul>
+        <nav class="uk-navbar-container" uk-navbar>
+          <div class="uk-navbar-left">
+            <button class="uk-button uk-button-default uk-margin-small-right" type="button" uk-toggle="target: #offcanvas-nav-primary">Nav</button>
+          </div>
+        </nav>
 
         </div>
-      </nav>
-      <div class="uk-offcanvas-content">
+        <div class="mx-5 my-5 py-3">
+          {% block body %}{% endblock %}
+        </div>
+        <div class="uk-offcanvas-content">
+          <div id="offcanvas-nav-primary" uk-offcanvas="overlay: true">
+            <div class="uk-offcanvas-bar uk-flex uk-flex-column">
 
-          <button class="uk-button uk-button-default uk-margin-small-right" type="button" uk-toggle="target: #offcanvas-slide">Slide</button>
-
-          <button class="uk-button uk-button-default uk-margin-small-right" type="button" uk-toggle="target: #offcanvas-push">Push</button>
-
-          <button class="uk-button uk-button-default uk-margin-small-right" type="button" uk-toggle="target: #offcanvas-reveal">Reveal</button>
-
-          <button class="uk-button uk-button-default uk-margin-small-right" type="button" uk-toggle="target: #offcanvas-none">None</button>
-
-          <div id="offcanvas-slide" uk-offcanvas="overlay: true">
-              <div class="uk-offcanvas-bar">
-
-                  <button class="uk-offcanvas-close" type="button" uk-close></button>
-
-                  <h3>Title</h3>
-
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-
-              </div>
+              <ul class="uk-nav uk-nav-primary uk-nav-center uk-margin-auto-vertical">
+                <li class="uk-active"><a href="#">Active</a></li>
+                <li class="uk-parent">
+                  <a href="#">Parent</a>
+                  <ul class="uk-nav-sub">
+                    <li><a href="#">Sub item</a></li>
+                    <li><a href="#">Sub item</a></li>
+                  </ul>
+                </li>
+                <li class="uk-nav-header">Header</li>
+                <li><a href="#"><span class="uk-margin-small-right" uk-icon="icon: table"></span> Item</a></li>
+                <li><a href="#"><span class="uk-margin-small-right" uk-icon="icon: thumbnails"></span> Item</a></li>
+                <li class="uk-nav-divider"></li>
+                <li><a href="#"><span class="uk-margin-small-right" uk-icon="icon: trash"></span> Item</a></li>
+              </ul>
+            </div>
           </div>
-
-          <div id="offcanvas-push" uk-offcanvas="mode: push; overlay: true">
-              <div class="uk-offcanvas-bar">
-
-                  <button class="uk-offcanvas-close" type="button" uk-close></button>
-
-                  <h3>Title</h3>
-
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-
-              </div>
-          </div>
-
-          <div id="offcanvas-reveal" uk-offcanvas="mode: reveal; overlay: true">
-              <div class="uk-offcanvas-bar">
-
-                  <button class="uk-offcanvas-close" type="button" uk-close></button>
-
-                  <h3>Title</h3>
-
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-
-              </div>
-          </div>
-
-          <div id="offcanvas-none" uk-offcanvas="mode: none; overlay: true">
-              <div class="uk-offcanvas-bar">
-
-                  <button class="uk-offcanvas-close" type="button" uk-close></button>
-
-                  <h3>Title</h3>
-
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-
-              </div>
-          </div>
-
-      </div>
-
-      </div>
-      <div class="mx-5 my-5 py-3">
-        {% block body %}{% endblock %}
-      </div>
+        </div>
         {% block javascripts %}
         <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
